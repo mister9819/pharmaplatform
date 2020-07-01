@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Carehome Database</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+    	#DataTables_Table_0_wrapper {
+    		padding: 10px 15px;
+    	}
+    	#summary {
+    		overflow: auto;
+    		overflow-x: hidden;
+    	}
+    	.square {
+		    float:left;
+		    width: 31%;
+		    /* = width for a 1:1 aspect ratio */
+		    margin: 1%;
+		    background-color: #835DC4;
+		}
+		tr.selected {
+		    background-color: rgba(211,211,211, 0.7);
+		}
+		tr td:nth-child(9), th:nth-child(9) {
+		    display: none;
+		}
+		.display-table td {
+			padding-left: 15px;
+			padding-bottom: 6px;
+			padding-top: 0;
+			border: 0;
+		}
+		.display-table tr td:nth-child(2) {
+			text-align: right;
+		}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html" >
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" style="margin-top: -8px" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>Day</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a style="display: block;" href="javascript:void()">Day</a></li>
+                                        <li><a style="display: block;" href="javascript:void()">Night</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="images/user/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                        </li>
+                                                                                
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Supplier</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Add New Supplier</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Customer</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Add New Customer</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Care Home</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./add-carehome.html">Add New Care Home</a></li>
+                            <li><a href="./db-carehome.html">Care Home Database</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="card" id="main-card">
+                            <div class="card-body">
+                                <div class="row" style="padding: 0 13px;">
+                                    <div class="col-lg-6">
+                                        <h4 class="card-title">Carehome Database</h4>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="index.html">
+                                        <div class="button">
+                                            <div class="icon">
+                                                <i class="fa fa-user-plus"></i>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th width="3%">ID</th>
+                                                <th width="50%">Company Name</th>
+                                                <th width="25%">Contact Person</th>
+                                                <th width="18%">Mobile</th>
+                                                <th width="10%">Email</th>
+                                                <th width="8%">Status</th>
+                                                <th width="1%">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        	<tr class="selected">
+												<td>1</td>
+												<td>Non LLC</td>
+												<td>Colby Washington</td>
+												<td>1-842-606-4315</td>
+												<td>nunc@Inmi.org</td>
+												<td class="text-center">
+                                                    <!--
+                                                    <select class="form-control" style="visibility: none;">
+                                                        <option>Lead</option>
+                                                        <option>Active</option>
+                                                        <option>Inactive</option>
+                                                        <option>Dead</option>
+                                                    </select>
+                                                    -->
+                                                    <span class="label label-pill label-secondary">Lead</span>
+                                                </td>
+												<td style="white-space: nowrap"><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Sapien Ltd</td>
+												<td>Willa Savage</td>
+												<td>676-8688</td>
+												<td>vehicula.Pellentesque@mollisnon.co.uk</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Sagittis Augue Eu Corporation</td>
+												<td>Abbot Pruitt</td>
+												<td>1-113-173-4964</td>
+												<td>ut.eros@aliquetlibero.edu</td>
+												<td class="text-center"><span class="label label-pill label-secondary">Lead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>Dictum Eu Associates</td>
+												<td>Jared Lloyd</td>
+												<td>1-427-182-0031</td>
+												<td>sem.magna@tincidunt.com</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>Tincidunt Nunc Corp.</td>
+												<td>Kenyon Gordon</td>
+												<td>325-5419</td>
+												<td>fringilla.feugiat@erosNamconsequat.net</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>Suspendisse Aliquet Incorporated</td>
+												<td>Wanda Quinn</td>
+												<td>1-267-497-4567</td>
+												<td>Mauris.non@egestasDuisac.co.uk</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>7</td>
+												<td>Orci Ut Corporation</td>
+												<td>Salvador York</td>
+												<td>1-612-554-3457</td>
+												<td>eu.eros@a.net</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td>Massa Non Ante Corp.</td>
+												<td>Felix Burnett</td>
+												<td>1-234-141-8835</td>
+												<td>mauris@liberoet.org</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>9</td>
+												<td>Molestie Orci Ltd</td>
+												<td>Illiana Tanner</td>
+												<td>1-250-203-0057</td>
+												<td>metus.Aliquam.erat@aliquameu.net</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>Eu LLC</td>
+												<td>Yoshio Harrison</td>
+												<td>1-398-164-8527</td>
+												<td>ante@atvelitCras.net</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>11</td>
+												<td>Euismod Enim Etiam Corp.</td>
+												<td>Cooper Willis</td>
+												<td>1-307-126-6261</td>
+												<td>dictum@laciniamattis.com</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>12</td>
+												<td>Facilisis Magna Tellus Company</td>
+												<td>Jacqueline Warren</td>
+												<td>344-5018</td>
+												<td>a@eget.net</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>13</td>
+												<td>Nunc Inc.</td>
+												<td>Nasim Garcia</td>
+												<td>1-111-265-4335</td>
+												<td>Vestibulum.ante.ipsum@nonmassa.edu</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>14</td>
+												<td>Nulla Aliquet Proin Consulting</td>
+												<td>Jakeem Cole</td>
+												<td>1-665-397-7424</td>
+												<td>eros@Namporttitor.co.uk</td>
+												<td class="text-center"><span class="label label-pill label-secondary">Lead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>15</td>
+												<td>Fusce Ltd</td>
+												<td>Tad Monroe</td>
+												<td>1-461-305-0000</td>
+												<td>sollicitudin@rhoncus.com</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>16</td>
+												<td>Eu Eleifend LLC</td>
+												<td>Imelda Harmon</td>
+												<td>801-4251</td>
+												<td>ultrices.Vivamus.rhoncus@ornareIn.com</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>17</td>
+												<td>Donec Corp.</td>
+												<td>Emerson Mcconnell</td>
+												<td>1-731-638-8393</td>
+												<td>vitae.aliquam@egestasrhoncus.com</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>18</td>
+												<td>Vitae Purus Gravida Consulting</td>
+												<td>Hayden Hubbard</td>
+												<td>1-678-528-4006</td>
+												<td>vitae@eutellus.co.uk</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>19</td>
+												<td>Dignissim Magna A Company</td>
+												<td>Wylie Paul</td>
+												<td>134-1254</td>
+												<td>facilisis.Suspendisse.commodo@arcu.net</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>20</td>
+												<td>Facilisi Sed Neque Foundation</td>
+												<td>Benedict Alvarado</td>
+												<td>1-765-584-1058</td>
+												<td>hendrerit.Donec.porttitor@dignissim.ca</td>
+												<td class="text-center"><span class="label label-pill label-dark">Dead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>21</td>
+												<td>Mauris Eu Foundation</td>
+												<td>Regina Hamilton</td>
+												<td>1-208-995-3259</td>
+												<td>pellentesque.a@enim.edu</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>22</td>
+												<td>Curabitur Ut Odio PC</td>
+												<td>Hyacinth Trujillo</td>
+												<td>279-2393</td>
+												<td>elementum.sem@vitaedolorDonec.com</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>23</td>
+												<td>Velit Pellentesque Foundation</td>
+												<td>Arsenio Holman</td>
+												<td>139-9674</td>
+												<td>eleifend@suscipitestac.net</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>24</td>
+												<td>Molestie Sed Id Inc.</td>
+												<td>Yetta Owen</td>
+												<td>201-0719</td>
+												<td>eros.Nam@erat.edu</td>
+												<td class="text-center"><span class="label label-pill label-success">Active</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>25</td>
+												<td>Facilisi Corp.</td>
+												<td>Christen Jarvis</td>
+												<td>444-6230</td>
+												<td>Integer.tincidunt.aliquam@luctusut.edu</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>26</td>
+												<td>A Neque LLC</td>
+												<td>Wyatt Monroe</td>
+												<td>1-681-136-7390</td>
+												<td>dui@tinciduntaliquamarcu.com</td>
+												<td class="text-center"><span class="label label-pill label-secondary">Lead</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>27</td>
+												<td>Etiam Industries</td>
+												<td>Lara Hartman</td>
+												<td>1-832-237-6245</td>
+												<td>eu@purus.co.uk</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>28</td>
+												<td>Quis Arcu Ltd</td>
+												<td>Magee Miranda</td>
+												<td>1-192-366-4550</td>
+												<td>interdum.Curabitur.dictum@vitae.com</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>29</td>
+												<td>Suspendisse PC</td>
+												<td>Edward Pearson</td>
+												<td>258-7757</td>
+												<td>lorem.eget@pellentesqueegetdictum.org</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+											<tr>
+												<td>30</td>
+												<td>Ultrices Associates</td>
+												<td>Tasha Snow</td>
+												<td>1-812-711-6475</td>
+												<td>dolor@eutellus.ca</td>
+												<td class="text-center"><span class="label label-pill label-danger">Inactive</span></td>
+												<td><span>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Call"><i class="fa fa-phone color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-at color-muted mr-1"></i></a>
+													<a href="#" data-toggle="tooltip" data-placement="top" title="History"><i class="fa fa-history color-muted"></i></a>
+												</span></td>
+											</tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Company Name</th>
+                                                <th>Contact Person</th>
+                                                <th>Mobile</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3" style="padding: 0;">
+                    	<div class="card" id="summary">
+                            <div class="card-header" id="headingZero">
+                                <h5 class="mb-0">
+                                    <a>
+                                    Summary
+                                    </a>
+                                </h5>
+                            </div>
+                            <div>
+                                <div class="card-body" style="padding-top: 0;">
+                                    <div class="row">
+                                    	<div class="col-lg-12">
+                                            <div class="row" style="padding-top: 0.5rem;">
+                                                <h5 class="col-lg-12">Last Contacted Details</h5>
+                                                <br class="col-lg-12">
+                                                
+                                                <table class="table display-table">
+                                                	<col style="width:50%">
+													<col style="width:50%">
+                                                	<tr>
+                                                		<td>Name</td>
+                                                		<td>Test Demo</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Last Contact On</td>
+                                                		<td>19-Feb-2020</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Followup Date</td>
+                                                		<td>21-Feb-2020</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Notes</td>
+                                                		<td>test</td>
+                                                	</tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="row" style="margin-left: -20px; margin-right: -25px;">
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">1<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Quotes
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">0<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Blankt
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">0<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Orders
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">0<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Invoice
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">1<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Return
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">0<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Ongoing Sales Credit
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">51<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Posted Sales Shipments
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">51<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Posted Sales Invoices
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="square">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 text-right">
+                                                            <h2 class="color-white mr-2">0<h2>
+                                                        </div>
+                                                        <div class="col-lg-12 color-white ml-1">
+                                                            Posted Sales Returns
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="row" style="padding-top: 1rem;">
+                                                <h5 class="col-lg-12">Care Home Statistics</h5>
+                                                <br class="col-lg-12">
+                                                
+
+                                                <div class="col-lg-8">Balance</div>
+                                                <div class="col-lg-4 text-right">2251.80</div>
+                                                <br class="col-lg-12">
+                                                <br class="col-lg-12">
+
+                                                <h6 class="col-lg-12">SALES</h6>
+                                                <div class="col-lg-8">Outstanding Orders</div>
+                                                <div class="col-lg-4 text-right">0.00</div>
+                                                <div class="col-lg-8">Shipped Not Invd.</div>
+                                                <div class="col-lg-4 text-right">0.00</div>
+                                                <div class="col-lg-8">Outstanding Invoices</div>
+                                                <div class="col-lg-4 text-right">1797.78</div>
+                                                <br class="col-lg-12">
+                                                <br class="col-lg-12">
+
+                                                <h6 class="col-lg-12">PAYMENTS</h6>
+                                                <div class="col-lg-8">Payments</div>
+                                                <div class="col-lg-4 text-right">43428.12</div>
+                                                <div class="col-lg-8">Refunds</div>
+                                                <div class="col-lg-4 text-right">0.00</div>
+                                                <div class="col-lg-8">Last Payment Receipt Date</div>
+                                                <div class="col-lg-4 text-right">06/04/2020</div>
+                                                <br class="col-lg-12">
+                                                <br class="col-lg-12">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="row" style="padding-top: 1rem;">
+                                                <h5 class="col-lg-12">Company Information</h5>
+                                                <br class="col-lg-12">
+                                                
+                                                <table class="table display-table">
+                                                	<col style="width:50%">
+													<col style="width:50%">
+                                                	<tr>
+                                                		<td>Country</td>
+                                                		<td>AT</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Currency</td>
+                                                		<td>USD $</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Website</td>
+                                                		<td><a href="#">www.abc.org</a></td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>EU VAT No.</td>
+                                                		<td>NA</td>
+                                                	</tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="row" style="padding-top: 0.5rem;">
+                                                <h5 class="col-lg-12">Bank Details</h5>
+                                                <br class="col-lg-12">
+                                                
+                                                <table class="table display-table">
+                                                	<col style="width:50%">
+													<col style="width:50%">
+                                                	<tr>
+                                                		<td>Bank Name</td>
+                                                		<td>NA</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Account Name</td>
+                                                		<td>NA</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>BICS</td>
+                                                		<td>NA</td>
+                                                	</tr>
+                                                	<tr>
+                                                		<td>Branch Address</td>
+                                                		<td>NA</td>
+                                                	</tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by Easy Rich</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+    <script>
+            $(function(){
+
+                var cw = $('.equal').width();
+                $('.equal').css({'height':cw+'px'});
+
+                var ww = $("#main-card").height();
+                $("#summary").css({'max-height':ww+'px'});
+
+                $("tbody tr").click(function() {
+				    $(this).addClass('selected').siblings().removeClass("selected");
+				});
+
+				$("#main-container").click(function() {
+				    $(this).addClass('col-lg-12').removeClass('col-lg-9');
+				});
+            });
+        </script>
+
+</body>
+
+</html>

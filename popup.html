@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blank</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html" >
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" style="margin-top: -8px" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>Day</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a style="display: block;" href="javascript:void()">Day</a></li>
+                                        <li><a style="display: block;" href="javascript:void()">Night</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="images/user/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                        </li>
+                                                                                
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Supplier</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Add New Supplier</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Customer</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Add New Customer</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Care Home</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./add-carehome.html">Add New Care Home</a></li>
+                            <li><a href="./db-carehome.html">Care Home Database</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch chat
+                </button>
+
+                <!-- Modal -->
+                <div class="modal right fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <div class="modal-dialog mr-0 modal-dialog-scrollable" style="margin-top: 6rem;" role="document">
+                      <div class="modal-content">
+                         <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Chats</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                         </div>
+                         <div class="modal-body">
+                            <div class="row rounded-lg overflow-hidden">
+
+                            <!-- Users box-->
+                            <div id="user-box" class="col-12 px-0" style="margin-top: -1rem;">
+                              <div class="bg-white">
+
+                                <div class="messages-box">
+                                  <div class="list-group rounded-0">
+
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                      <div class="media">
+                                        <div class="img-container">
+                                            <img src="./images/avatar/2.jpg" class="rounded-circle" alt="">
+                                            <i class="fa fa-circle text-success"></i>
+                                        </div>
+                                        <div class="media-body ml-4">
+                                          <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <h6 class="mb-0">Walter R.</h6><small class="small font-weight-bold">14 Dec</small>
+                                          </div>
+                                          <p class="font-italic text-muted mb-0 text-small">Testing a chat system which has dummy test messages.</p>
+                                        </div>
+                                      </div>
+                                    </a>
+
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                      <div class="media"><div class="img-container">
+                                                                <img src="./images/avatar/3.jpg" class="rounded-circle" alt="">
+                                                                <i class="fa fa-circle"></i>
+                                                            </div>
+                                        <div class="media-body ml-4">
+                                          <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <h6 class="mb-0">Andrew D.</h6><small class="small font-weight-bold">9 Nov</small>
+                                          </div>
+                                          <p class="font-italic text-muted mb-0 text-small">Dummy text.</p>
+                                        </div>
+                                      </div>
+                                    </a>
+
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                      <div class="media">
+                                        <div class="img-container">
+                                                                <img src="./images/avatar/6.jpg" class="rounded-circle" alt="">
+                                                                <i class="fa fa-circle"></i>
+                                                            </div>
+                                        <div class="media-body ml-4">
+                                          <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <h6 class="mb-0">Megan S.</h6><small class="small font-weight-bold">18 Oct</small>
+                                          </div>
+                                          <p class="font-italic text-muted mb-0 text-small">Dummy text.</p>
+                                        </div>
+                                      </div>
+                                    </a>
+
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                      <div class="media">
+                                        <div class="img-container">
+                                                                <img src="./images/avatar/4.jpg" class="rounded-circle" alt="">
+                                                                <i class="fa fa-circle"></i>
+                                                            </div>
+                                        <div class="media-body ml-4">
+                                          <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <h6 class="mb-0">Doris R.</h6><small class="small font-weight-bold">17 Oct</small>
+                                          </div>
+                                          <p class="font-italic text-muted mb-0 text-small">Dummy text.</p>
+                                        </div>
+                                      </div>
+                                    </a>
+
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                      <div class="media">
+                                        <div class="img-container">
+                                                                <img src="./images/avatar/5.jpg" class="rounded-circle" alt="">
+                                                                <i class="fa fa-circle"></i>
+                                                            </div>
+                                        <div class="media-body ml-4">
+                                          <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <h6 class="mb-0">Elizabeth W.</h6><small class="small font-weight-bold">2 Sep</small>
+                                          </div>
+                                          <p class="font-italic text-muted mb-0 text-small">Dummy text.</p>
+                                        </div>
+                                      </div>
+                                    </a>
+
+
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- Chat Box-->
+                            <div id="chat-box" class="chat-box col-12 px-0 pb-4" style="margin-top: -1rem;">
+                                <div class="bg-gray px-4 py-2 bg-light" style="position: fixed; width: 96%;">
+                                    <a id="back-chat" class="pr-3" style="cursor: pointer; display: inline; font-size: 1.3rem;">&#8249;</a>
+                                  <p class="h5 mb-0 py-1" style="display: inline;">Walter R.</p>
+                                </div>
+                              <div class="px-4" style="margin-top: 4rem;">
+                                
+                                <!-- Sender Message-->
+                                <div class="media w-75 mb-1"><img src="./images/avatar/2.jpg" alt="user" width="50" class="rounded-circle">
+                                  <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-muted">Testing is an approach to all solutions.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-55 ml-auto mb-1">
+                                  <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-white">Testing a chat system which has dummy test messages.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Sender Message-->
+                                <div class="media w-75 mb-1"><img src="./images/avatar/2.jpg" alt="user" width="50" class="rounded-circle">
+                                  <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-muted">Testing is an approach to all solutions.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-55 ml-auto mb-1">
+                                  <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-white">Testing a chat system which has dummy test messages.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Sender Message-->
+                                <div class="media w-75 mb-1"><img src="./images/avatar/2.jpg" alt="user" width="50" class="rounded-circle">
+                                  <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-muted">Testing is an approach to all solutions.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-55 ml-auto mb-1">
+                                  <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-white">Testing a chat system which has dummy test messages.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Sender Message-->
+                                <div class="media w-75 mb-1"><img src="./images/avatar/2.jpg" alt="user" width="50" class="rounded-circle">
+                                  <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-muted">Testing is an approach to all solutions.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-55 ml-auto mb-1">
+                                  <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                      <p class="text-small mb-0 text-white">Testing a chat system which has dummy test messages.</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                              <!-- Typing area -->
+                              <form action="#" class="bg-light" style="position: fixed; width: 96%; bottom: 1px;">
+                                <div class="input-group">
+                                  <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                                  <div class="input-group-append">
+                                    <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by Easy Rich</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#chat-box").hide();
+
+            $("#user-box a").click(function(){
+                var tsrc = $(this).find('img').attr('src');
+                $('#chat-box img').attr('src', tsrc);
+
+                var tname = $(this).find('h6').text();
+                $('#chat-box .h5').text(tname);
+
+                $("#chat-box div:first").scrollTop($("#chat-box div:first")[0].scrollHeight);
+                console.log($("#chat-box").text());
+
+                $("#chat-box").show();
+                $("#user-box").hide();
+            });
+
+            $("#back-chat").click(function(){
+                $("#chat-box").hide();
+                $("#user-box").show();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

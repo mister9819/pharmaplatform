@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Add New CareHome</title>
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+        <!-- Date picker plugins css -->
+        <link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <style type="text/css">
+            .form-control {
+                background-color: #F7FAFC;
+                border: 1px solid #EEEEEE;
+            }
+
+            input[type="text"]:disabled {
+                color: #888;
+            }
+
+            .card-header a {
+                font-size: 1.2rem;
+            }
+
+            [data-toggle="collapse"]:after {
+                display: inline-block;
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\f054";
+                transform: rotate(90deg);
+                transition: all linear 0.25s;
+                float: right;
+            }
+
+            [data-toggle="collapse"].collapsed:after {
+                transform: rotate(-90deg);
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <!--*******************
+            Preloader start
+            ********************-->
+        <div id="preloader">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+        <!--*******************
+            Preloader end
+            ********************-->
+        <div id="main-wrapper">
+            <!--**********************************
+                Nav header start
+                ***********************************-->
+            <div class="nav-header">
+                <div class="brand-logo">
+                    <a href="index.html" >
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                    <img src="images/logo-text.png" style="margin-top: -8px" alt="">
+                    </span>
+                    </a>
+                </div>
+            </div>
+            <!--**********************************
+                Nav header end
+                ***********************************-->
+            <!--**********************************
+                Header start
+                ***********************************-->
+            <div class="header">
+                <div class="header-content clearfix">
+                    <div class="nav-control">
+                        <div class="hamburger">
+                            <span class="toggle-icon"><i class="icon-menu"></i></span>
+                        </div>
+                    </div>
+                    <div class="header-left">
+                        <div class="input-group icons">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                            </div>
+                            <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                            <div class="drop-down animated flipInX d-md-none">
+                                <form action="#">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <ul class="clearfix">
+                            <li class="icons dropdown d-none d-md-flex">
+                                <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>Day</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                                </a>
+                                <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li><a style="display: block;" href="javascript:void()">Day</a></li>
+                                            <li><a style="display: block;" href="javascript:void()">Night</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="icons dropdown">
+                                <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                    <span class="activity active"></span>
+                                    <img src="images/user/1.png" height="40" width="40" alt="">
+                                </div>
+                                <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            </li>
+                                            <hr class="my-2">
+                                            <li>
+                                                <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                            </li>
+                                            <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--**********************************
+                Header end ti-comment-alt
+                ***********************************-->
+            <!--**********************************
+                Sidebar start
+                ***********************************-->
+            <div class="nk-sidebar">
+                <div class="nk-nav-scroll">
+                    <ul class="metismenu" id="menu">
+                        <li class="nav-label">Dashboard</li>
+                        <li class="mega-menu mega-menu-sm">
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Supplier</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="./layout-blank.html">Add New Supplier</a></li>
+                            </ul>
+                        </li>
+                        <li class="mega-menu mega-menu-sm">
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Customer</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="./layout-blank.html">Add New Customer</a></li>
+                            </ul>
+                        </li>
+                        <li class="mega-menu mega-menu-sm">
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Care Home</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="./add-carehome.html">Add New Care Home</a></li>
+                                <li><a href="./db-carehome.html">Care Home Database</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--**********************************
+                Sidebar end
+                ***********************************-->
+            <!--**********************************
+                Content body start
+                ***********************************-->
+            <div class="content-body">
+                <div class="row page-titles mx-0">
+                    <div class="col p-md-0">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="accordion" role="tablist">
+                                
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Company Information
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="text" id="companyname" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="companyname">Company Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="email" id="email" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="email">Email ID</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group" >
+                                                        <input type="text" id="phone" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="phone">Phone Number</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label  for="country">Country</label>
+                                                        <select class="form-control" id="country">
+                                                            <option value="" disabled selected>Select your option</option>
+                                                            <option>AT</option>
+                                                            <option>BE</option>
+                                                            <option>BG</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label  for="country">Currency</label>
+                                                        <select class="form-control" id="country">
+                                                            <option value="" disabled selected>Select your option</option>
+                                                            <option value="3">EU    €</option>
+                                                            <option value="2">GBP    £</option>
+                                                            <option value="5">INR    ₹</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <label>Website</label>
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend"><span class="input-group-text">https://</span>
+                                                        </div>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="shortcode" class="form-control" placeholder=" " disabled value="auto generated">
+                                                        <label class="form-label" for="shortcode">Short Code</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="NonEUVATNo" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="NonEUVATNo">Non EU VAT No</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="EUVATNo" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="EUVATNo">EU VAT No</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>VAT Certificate Verification Date</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="GPHCNo" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="GPHCNo">GPHC No</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label>Onboarding Date</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <label  for="OnboardingAgent">Onboarding Agent</label>
+                                                        <select class="form-control" id="OnboardingAgent" disabled style="color: #888">
+                                                            <option value="" disabled selected>Select your option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label  for="BusinessArea">Business Area</label>
+                                                        <select class="form-control" id="BusinessArea">
+                                                            <option value="" disabled selected>Select your option</option>
+                                                            <option value="10076">Cosmetic products manufacturer</option>
+                                                            <option value="10077">Cosmetic products wholesaler</option>
+                                                            <option value="10072">Logistic Company</option>
+                                                            <option value="6">Medical equipment wholesaler</option>
+                                                            <option value="4">Medication wholesaler</option>
+                                                            <option value="10073">Miscellaneous</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label  for="SupplierStatus">Supplier Status</label>
+                                                        <select class="form-control" id="SupplierStatus">
+                                                            <option value="" disabled selected>Select your option</option>
+                                                            <option value="10047">Lead</option>
+                                                            <option value="10061">Lead In Progress</option>
+                                                            <option value="10048">Potential Suplier</option>
+                                                            <option value="10049">Supplier Onboarding</option>
+                                                            <option value="1">Active</option>
+                                                            <option value="2">InActive</option>
+                                                            <option value="10050">Black Listed</option>
+                                                            <option value="10060">Dead</option>
+                                                            <option value="10062">Manufacturer</option>
+                                                            <option value="10066">Generic Drug and Supplements</option>
+                                                            <option value="10071">Future Prospects</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="ProductSupplied" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="ProductSupplied">Product Supplied</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <textarea type="text" id="Notes" class="form-control" placeholder=" "> </textarea>
+                                                        <label class="form-label">Notes</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="button">
+                                                        <div class="icon">
+                                                            <i class="fa fa-floppy-o"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Addresses
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="text" id="address" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="address">Address</label>
+                                                    </div>
+                                                </div>
+                                                <div class="basic-form col-lg-12">
+                                                    <form>
+                                                        <div class="form-group" style="margin-bottom: 0px;">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Registered Address</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Delivery Address</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Contact Address</label>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="button">
+                                                        <div class="icon">
+                                                            <i class="fa fa-floppy-o"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-3">
+                                                    <div class="nav flex-column nav-pills"><a href="#v-pills-home" data-toggle="pill" class="nav-link active show">Registered</a> <a href="#v-pills-profile" data-toggle="pill" class="nav-link">Delivery</a> <a href="#v-pills-messages" data-toggle="pill" class="nav-link">Contact</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <div class="tab-content">
+                                                        <div id="v-pills-home" class="tab-pane fade active show">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="84%">Registered Address</th>
+                                                                            <th width="8%">Default</th>
+                                                                            <th width="8%">Actions</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>abc</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio" checked></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xyz</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>pqr</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div id="v-pills-profile" class="tab-pane fade">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="84%">Delivery Address</th>
+                                                                            <th width="8%">Default</th>
+                                                                            <th width="8%">Actions</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>abc</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio2" checked></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xyz</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio2"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>pqr</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio2"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div id="v-pills-messages" class="tab-pane fade">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="84%">Contact Address</th>
+                                                                            <th width="8%">Default</th>
+                                                                            <th width="8%">Actions</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>abc</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio3" checked></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xyz</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio3"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>pqr</td>
+                                                                            <td class="text-center"><input type="radio" name="optradio3"></td>
+                                                                            <td class="text-center">
+                                                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            Contacts
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="firstname" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="firstname">First Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="lastname" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="lastname">Last Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="designation" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="designation">Designation</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="mobile" id="mobile" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="mobile">Phone Number/Extension</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="email" id="cemail" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="cemail">Email ID</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label>Birthday</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label>Anniversary</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="col-lg-12">
+                                                    <div class="button">
+                                                        <div class="icon">
+                                                            <i class="fa fa-floppy-o"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="29%">Full Name</th>
+                                                        <th width="16%">Designation</th>
+                                                        <th width="16%">Phone Number</th>
+                                                        <th width="29%">Email Address</th>
+                                                        <th width="5%">Default</th>
+                                                        <th width="5%">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>123</td>
+                                                        <td>abc@abc</td>
+                                                        <td class="text-center"><input type="radio" name="coptradio" checked></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>xyz</td>
+                                                        <td>xyz</td>
+                                                        <td>456</td>
+                                                        <td>xyz@xyz</td>
+                                                        <td class="text-center"><input type="radio" name="coptradio"></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>pqr</td>
+                                                        <td>pqr</td>
+                                                        <td>789</td>
+                                                        <td>pqr@pqr</td>
+                                                        <td class="text-center"><input type="radio" name="coptradio"></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>                                                                                    
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            Bank Details
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="bankname" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="bankname">Bank Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="accname" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="accname">Account Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="accnum" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="accnum">Account Number</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="text" id="sortcode" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="sortcode">Sort Code</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="bics" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="bics">BICS</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="swiftcode" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="swiftcode">Swift Code</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="iban" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="iban">IBAN</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="branchaddress" class="form-control" placeholder=" ">
+                                                        <label class="form-label" for="branchaddress">Branch Address</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="button">
+                                                        <div class="icon">
+                                                            <i class="fa fa-floppy-o"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="24%">Bank Name</th>
+                                                        <th width="25%">Account Name</th>
+                                                        <th width="14%">Account Number</th>
+                                                        <th width="8%">Sort Code</th>
+                                                        <th width="5%">BICS</th>
+                                                        <th width="9%">Swift Code</th>
+                                                        <th width="5%">IBAN</th>
+                                                        <th width="5%">Default</th>
+                                                        <th width="5%">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>123</td>
+                                                        <td>123</td>
+                                                        <td>123</td>
+                                                        <td>123</td>
+                                                        <td>123</td>
+                                                        <td class="text-center"><input type="radio" name="boptradio" checked></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>xyz</td>
+                                                        <td>xyz</td>
+                                                        <td>456</td>
+                                                        <td>456</td>
+                                                        <td>456</td>
+                                                        <td>456</td>
+                                                        <td>456</td>
+                                                        <td class="text-center"><input type="radio" name="boptradio"></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>pqr</td>
+                                                        <td>pqr</td>
+                                                        <td>789</td>
+                                                        <td>789</td>
+                                                        <td>789</td>
+                                                        <td>789</td>
+                                                        <td>789</td>
+                                                        <td class="text-center"><input type="radio" name="boptradio"></td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                                                                    
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingFive">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                            Required Document Upload
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <form action="/action_page.php" class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <input type="file" id="myFile" name="filename">
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="button">
+                                                            <div class="icon">
+                                                                <i class="fa fa-floppy-o"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <hr>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%">File Name</th>
+                                                        <th width="65%">Location</th>
+                                                        <th width="5%">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>abc.docx</td>
+                                                        <td>../abc.docx</td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>xyz.pdf</td>
+                                                        <td>../xyz.pdf</td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>pqr.txt</td>
+                                                        <td>../pqr.txt</td>
+                                                        <td class="text-center">
+                                                            <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                                                                    
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingSix">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                            Terms and Conditions
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSix" class="collapse show" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12 font-italic" style="margin-top: -1.5rem; margin-bottom: 0.5rem;">
+                                                    1. Some terms and conditions.<br>
+                                                    2. Some terms and conditions.<br>
+                                                    3. Some terms and conditions.<br>
+                                                    4. Some terms and conditions.<br>
+                                                </div>
+                                                <div class="col-lg-6" style="margin-top: 30px;">
+                                                    <div class="form-group">
+                                                        <input type="text" id="name" class="form-control" value="ABC" readonly placeholder=" ">
+                                                        <label class="form-label" for="name">Accepted by</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Accepted Date</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="06/12/2020" readonly><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2" style="margin-top: 40px;">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" value="" checked disabled>&nbsp;Accepted</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #/ container -->
+            </div>
+            <!--**********************************
+                Content body end
+                ***********************************-->
+            <!--**********************************
+                Footer start
+                ***********************************-->
+            <div class="footer">
+                <div class="copyright">
+                    <p>Copyright &copy; Designed & Developed by Easy Rich</p>
+                </div>
+            </div>
+            <!--**********************************
+                Footer end
+                ***********************************-->
+        </div>
+        <!--**********************************
+            Main wrapper end
+            ***********************************-->
+        <!--**********************************
+            Scripts
+            ***********************************-->
+        <script src="plugins/common/common.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/gleek.js"></script>
+        <script src="js/styleSwitcher.js"></script>
+
+        <!-- Date Picker Plugin JavaScript -->
+        <script src="./plugins/moment/moment.js"></script>
+        <script src="./plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+        <script src="./plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+        <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+        <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+        <script src="./plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+        <script src="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="./plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="./plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="./js/plugins-init/form-pickers-init.js"></script>
+
+        <script>
+            $(function(){
+
+                var cw = $('.equal').width();
+                $('.equal').css({'height':cw+'px'});
+
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Carehome Registeration</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./plugins/file-button/file-button.css">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="#" id="step-form-horizontal" class="step-form-horizontal">
+                        <div>
+                            <h4>Company Information</h4>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" id="companyname" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="companyname">Company Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <input type="email" id="email" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="email">Email ID</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group" >
+                                            <input type="text" id="phone" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="phone">Phone Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label  for="country">Country</label>
+                                            <select class="form-control" id="country">
+                                                <option value="" disabled selected>Select your option</option>
+                                                <option>AT</option>
+                                                <option>BE</option>
+                                                <option>BG</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label  for="country">Currency</label>
+                                            <select class="form-control" id="country">
+                                                <option value="" disabled selected>Select your option</option>
+                                                <option value="3">EU    €</option>
+                                                <option value="2">GBP    £</option>
+                                                <option value="5">INR    ₹</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <label>Website</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend"><span class="input-group-text">https://</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="shortcode" class="form-control" placeholder=" " disabled value="auto generated">
+                                            <label class="form-label" for="shortcode">Short Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="NonEUVATNo" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="NonEUVATNo">Non EU VAT No</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="EUVATNo" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="EUVATNo">EU VAT No</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>VAT Certificate Verification Date</label>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="GPHCNo" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="GPHCNo">GPHC No</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>Onboarding Date</label>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="form-group">
+                                            <label  for="OnboardingAgent">Onboarding Agent</label>
+                                            <select class="form-control" id="OnboardingAgent" disabled style="color: #888">
+                                                <option value="" disabled selected>Select your option</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label  for="BusinessArea">Business Area</label>
+                                            <select class="form-control" id="BusinessArea">
+                                                <option value="" disabled selected>Select your option</option>
+                                                <option value="10076">Cosmetic products manufacturer</option>
+                                                <option value="10077">Cosmetic products wholesaler</option>
+                                                <option value="10072">Logistic Company</option>
+                                                <option value="6">Medical equipment wholesaler</option>
+                                                <option value="4">Medication wholesaler</option>
+                                                <option value="10073">Miscellaneous</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label  for="SupplierStatus">Supplier Status</label>
+                                            <select class="form-control" id="SupplierStatus">
+                                                <option value="" disabled selected>Select your option</option>
+                                                <option value="10047">Lead</option>
+                                                <option value="10061">Lead In Progress</option>
+                                                <option value="10048">Potential Suplier</option>
+                                                <option value="10049">Supplier Onboarding</option>
+                                                <option value="1">Active</option>
+                                                <option value="2">InActive</option>
+                                                <option value="10050">Black Listed</option>
+                                                <option value="10060">Dead</option>
+                                                <option value="10062">Manufacturer</option>
+                                                <option value="10066">Generic Drug and Supplements</option>
+                                                <option value="10071">Future Prospects</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="ProductSupplied" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="ProductSupplied">Product Supplied</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <h4>Address</h4>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input type="text" id="address" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="address">Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="basic-form col-lg-12">
+                                        <form>
+                                            <div class="form-group" style="margin-bottom: 0px;">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">Registered Address</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">Delivery Address</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">Contact Address</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="button">
+                                            <div class="icon">
+                                                <i class="fa fa-floppy-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th width="29%">Full Name</th>
+                                            <th width="16%">Designation</th>
+                                            <th width="16%">Phone Number</th>
+                                            <th width="29%">Email Address</th>
+                                            <th width="5%">Default</th>
+                                            <th width="5%">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="display: flex; align-items: center; justify-content: center;"><input type="radio" name="rcoptradio" checked></td>
+                                            <td class="text-center">
+                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <h4>Contact</h4>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="firstname" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="firstname">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="lastname" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="lastname">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="designation" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="designation">Designation</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="mobile" id="mobile" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="mobile">Phone Number/Extension</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="email" id="cemail" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="cemail">Email ID</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label>Birthday</label>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label>Anniversary</label>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker-autoclose" placeholder="mm/dd/yyyy"><span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="col-lg-12">
+                                        <div class="button">
+                                            <div class="icon">
+                                                <i class="fa fa-floppy-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th width="29%">Full Name</th>
+                                            <th width="16%">Designation</th>
+                                            <th width="16%">Phone Number</th>
+                                            <th width="29%">Email Address</th>
+                                            <th width="5%">Default</th>
+                                            <th width="5%">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="display: flex; align-items: center; justify-content: center;"><input type="radio" name="cradio" checked></td>
+                                            <td class="text-center">
+                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <h4>Bank Details</h4>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="bankname" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="bankname">Bank Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="accname" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="accname">Account Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="accnum" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="accnum">Account Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" id="sortcode" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="sortcode">Sort Code</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="bics" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="bics">BICS</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="swiftcode" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="swiftcode">Swift Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="iban" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="iban">IBAN</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <input type="text" id="branchaddress" class="form-control" placeholder=" ">
+                                            <label class="form-label" for="branchaddress">Branch Address</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="button">
+                                            <div class="icon">
+                                                <i class="fa fa-floppy-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th width="24%">Bank Name</th>
+                                            <th width="25%">Account Name</th>
+                                            <th width="14%">Account Number</th>
+                                            <th width="8%">Sort Code</th>
+                                            <th width="5%">BICS</th>
+                                            <th width="9%">Swift Code</th>
+                                            <th width="5%">IBAN</th>
+                                            <th width="5%">Default</th>
+                                            <th width="5%">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="display: flex; align-items: center; justify-content: center;"><input type="radio" name="aradio" checked></td>
+                                            <td class="text-center">
+                                                <span><a href="#" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <h4>Document Upload</h4>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="upload">
+                                            <div class="upload-files">
+                                                <header>
+                                                    <p>
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                        <span class="up">Compulsory</span>
+                                                        <span class="load">Document</span>
+                                                    </p>
+                                                </header>
+                                                <div class="body drop">
+                                                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                                                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" class="triggerFile">browse</a> to begin the upload</p>
+                                                    <input type="file"/>
+                                                </div>
+                                                <footer>
+                                                    <div class="divider">
+                                                        <span>
+                                                            <AR>FILES</AR>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-files">
+                                                        <!--   template   -->
+                                                    </div>
+                                                    <button class="importar">UPDATE FILES</button>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="upload">
+                                            <div class="upload-files">
+                                                <header>
+                                                    <p>
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                        <span class="up">Compulsory</span>
+                                                        <span class="load">Document</span>
+                                                    </p>
+                                                </header>
+                                                <div class="body drop">
+                                                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                                                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" class="triggerFile">browse</a> to begin the upload</p>
+                                                    <input type="file"/>
+                                                </div>
+                                                <footer>
+                                                    <div class="divider">
+                                                        <span>
+                                                            <AR>FILES</AR>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-files">
+                                                        <!--   template   -->
+                                                    </div>
+                                                    <button class="importar">UPDATE FILES</button>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="upload">
+                                            <div class="upload-files">
+                                                <header>
+                                                    <p>
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                        <span class="up">Compulsory</span>
+                                                        <span class="load">Document</span>
+                                                    </p>
+                                                </header>
+                                                <div class="body drop">
+                                                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                                                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" class="triggerFile">browse</a> to begin the upload</p>
+                                                    <input type="file"/>
+                                                </div>
+                                                <footer>
+                                                    <div class="divider">
+                                                        <span>
+                                                            <AR>FILES</AR>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-files">
+                                                        <!--   template   -->
+                                                    </div>
+                                                    <button class="importar">UPDATE FILES</button>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="upload">
+                                            <div class="upload-files">
+                                                <header>
+                                                    <p>
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                        <span class="up">Compulsory</span>
+                                                        <span class="load">Document</span>
+                                                    </p>
+                                                </header>
+                                                <div class="body drop">
+                                                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                                                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" class="triggerFile">browse</a> to begin the upload</p>
+                                                    <input type="file"/>
+                                                </div>
+                                                <footer>
+                                                    <div class="divider">
+                                                        <span>
+                                                            <AR>FILES</AR>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-files">
+                                                        <!--   template   -->
+                                                    </div>
+                                                    <button class="importar">UPDATE FILES</button>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="upload">
+                                            <div class="upload-files">
+                                                <header>
+                                                    <p>
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                        <span class="up">Compulsory</span>
+                                                        <span class="load">Document</span>
+                                                    </p>
+                                                </header>
+                                                <div class="body drop">
+                                                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                                                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" class="triggerFile">browse</a> to begin the upload</p>
+                                                    <input type="file"/>
+                                                </div>
+                                                <footer>
+                                                    <div class="divider">
+                                                        <span>
+                                                            <AR>FILES</AR>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-files">
+                                                        <!--   template   -->
+                                                    </div>
+                                                    <button class="importar">UPDATE FILES</button>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div id="file-button" class="button hovere" style="margin-right: 2rem; margin-top: 0.5rem;">
+                                            <div class="icon">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            
+        
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+
+    <script src="./plugins/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="./plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="./js/plugins-init/jquery-steps-init.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#file-button").click(function() {
+                var filebox = $(this).parent().parent();
+                var last = filebox.find('div:nth-last-child(2)');
+
+                var txt1 = '<div class="col-lg-12"><h5 style="margin-top: 0.5rem;">Extra Document</h5><input type="file" id="myFile" name="filename"></div>'
+                last.after(txt1);
+                console.log(last.html());
+            });
+
+            //Init
+                function handleFileSelect(evt) {
+                    const files = evt.target.files; // FileList object
+                    console.log(files);
+            
+                    //files template
+                    let template = `${Object.keys(files)
+                        .map(file => `<div class="file file--${file}">
+                 <div class="name"><span>${files[file].name}</span></div>
+                 <div class="progress active"></div>
+                 <div class="done">
+                <a href="" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+                    <g><path id="path" d="M500,10C229.4,10,10,229.4,10,500c0,270.6,219.4,490,490,490c270.6,0,490-219.4,490-490C990,229.4,770.6,10,500,10z M500,967.7C241.7,967.7,32.3,758.3,32.3,500C32.3,241.7,241.7,32.3,500,32.3c258.3,0,467.7,209.4,467.7,467.7C967.7,758.3,758.3,967.7,500,967.7z M748.4,325L448,623.1L301.6,477.9c-4.4-4.3-11.4-4.3-15.8,0c-4.4,4.3-4.4,11.3,0,15.6l151.2,150c0.5,1.3,1.4,2.6,2.5,3.7c4.4,4.3,11.4,4.3,15.8,0l308.9-306.5c4.4-4.3,4.4-11.3,0-15.6C759.8,320.7,752.7,320.7,748.4,325z"</g>
+                    </svg>
+                                    </a>
+                 </div>
+                </div>`)
+                        .join("")}`;
+
+                    console.log("hey");
+            
+
+                    var current = $(evt.target).parent().parent().parent();
+            
+                    current.find(".drop").addClass("hidden");
+                    current.find("footer").addClass("hasFiles");
+                    current.find(".importar").addClass("active");
+                    setTimeout(() => {
+                        current.find(".list-files").html(template);
+                    }, 1000);
+            
+                    Object.keys(files).forEach(file => {
+                        let load = 2000 + (file * 2000); // fake load
+                        setTimeout(() => {
+                            current.find(`.file--${file}`).find(".progress").removeClass("active");
+                            current.find(`.file--${file}`).find(".done").addClass("anim");
+                        }, load);
+                    });
+                }
+            
+                // trigger input
+                $(".triggerFile").click(function(evt) {
+                    evt.preventDefault();
+                    $(this).parent().parent().find("input[type=file]").click();
+                });
+            
+                // drop events
+                $(".drop").on("dragleave", function(evt) {
+                    $(this).parent().parent().find(".drop").removeClass("active");
+                    evt.preventDefault();
+                });
+                $(".drop").on("dragover", function(evt) {
+                    $(this).parent().parent().find(".drop").addClass("active");
+                    evt.preventDefault();
+                });
+
+                $(".drop").on("dragenter", function(evt) {
+                    $(this).parent().parent().find(".drop").addClass("active");
+                    evt.preventDefault();
+                });
+                $(".drop").on("drop", function(evt) {
+
+                    console.log(evt.originalEvent.dataTransfer.files);
+
+                    $(this).parent().parent().parent().find("input[type=file]")[0].files = evt.originalEvent.dataTransfer.files;
+                    console.log($(this).parent().parent().parent().find("input[type=file]").files);
+                    //$(this).parent().parent().parent().find("input[type=file]").attr("files", evt.originalEvent.dataTransfer.files);
+                    $(this).parent().parent().parent().find("input[type=file]").change();
+                    evt.preventDefault();
+                });
+            
+                //upload more
+                $(".importar").click(function() {
+
+                    var current = $(this).parent().parent().parent();
+
+                    current.find(".list-files").html("");
+                    current.find("footer").removeClass("hasFiles");
+                    current.find(".importar").removeClass("active");
+                    current.find(".drop").removeClass("active");
+            
+                    setTimeout(() => {
+                        current.find(".drop").removeClass("hidden");
+                    }, 500);
+                });
+            
+                // input change
+                $("input[type=file]").on('change', function(evt) {
+                    handleFileSelect(evt);
+                });
+
+        });
+    </script>
+</body>
+
+</html>
